@@ -1,4 +1,7 @@
 
+int DC_range  = 0;
+double High_Period = 0;
+
 void setup() {
 
   Serial.begin(9600);
@@ -14,17 +17,18 @@ void loop() {
 
     int pot = analogRead(A2);
     int color_section = map(pot, 0, 1023, 1, 3);
+    
 
-    switch (color) {
+    switch (color_section) {
       
       case 1: // This will start with pin 5 always high and pin 4 always low. 
               // As pot sweeps, pin 5 duty cycle drops and pin 4 duty cycle grows
 
         digitalWrite(3, LOW);
         
-        int DC_range = map(pot, 0, 341, 0, 100);
+        DC_range = map(pot, 0, 341, 0, 100);
 
-        double High_Period = 15 * DC_range;
+        High_Period = 15 * DC_range;
 
         
         digitalWrite(5, LOW);
@@ -42,9 +46,9 @@ void loop() {
 
         digitalWrite(4, LOW);
         
-        int DC_range = map(pot, 342, 682, 0, 100);
+        DC_range = map(pot, 342, 682, 0, 100);
 
-        double High_Period = 15 * DC_range;
+        High_Period = 15 * DC_range;
 
         
         digitalWrite(3, LOW);
@@ -63,9 +67,9 @@ void loop() {
 
         digitalWrite(5, LOW);
 
-        int DC_range = map(pot, 683, 1023, 0, 100);
+        DC_range = map(pot, 683, 1023, 0, 100);
 
-        double High_Period = 15 * DC_range
+        High_Period = 15 * DC_range;
 
         
         digitalWrite(4, LOW);
