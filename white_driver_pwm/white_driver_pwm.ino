@@ -8,9 +8,6 @@ void setup() {
   pinMode (5, OUTPUT);
   noInterrupts() ;
 
-
-  Serial.println("dumbass");
-
   
 }
 
