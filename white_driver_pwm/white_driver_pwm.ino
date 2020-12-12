@@ -21,10 +21,10 @@ void loop() {
     //
     //
 
-    digitalWrite(2, HIGH);
+    digitalWrite(4, HIGH);
     delay(High_Period);
     
-    digitalWrite(2, LOW);
+    digitalWrite(4, LOW);
     delay(1500-(High_Period));
 
     // difficult to troubleshoot, serial.print is a long process and 
